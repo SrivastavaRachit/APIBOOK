@@ -1,6 +1,3 @@
-const express = require('express');
-const app = express();
-const port = 3001;
 
 const books = [
     [
@@ -125,10 +122,6 @@ const books = [
 
 ];
 
-app.get('/api/books', (req, res) => {
-    res.json(books);
-});
-
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
-});
+module.exports = (req, res) => {
+    res.status(200).json(books);
+};
